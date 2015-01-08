@@ -32,7 +32,26 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  //your code here
+  String simple = "";
+  String backwards = "";
+  for (int i = 0; i < word.length(); i ++) {
+    String c = word.substring(i, i + 1);
+    if (! (c.equals(" ") || c.equals(".") || c.equals(",") || c.equals("!") || c.equals("'")  )) {
+      simple = simple + c.toLowerCase();
+    }
+  }
+  for (int i = simple.length() - 1; i > -1; i -- ) {
+    backwards = backwards + simple.substring(i, i + 1);
+  } 
+  //System.out.println("A: " + simple);
+  //System.out.println("B: " + backwards);
+  if (backwards.equals(simple)) {
+    return true;
+  }
+  //Create a backwards string. 
+  //Cut punctuation.
+  //If backwards string equals forwards string, all ok. 
+  
   return false;
 }
 
